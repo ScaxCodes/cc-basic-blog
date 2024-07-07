@@ -1,16 +1,18 @@
+import { Link } from "react-router-dom";
+
 export function Navbar() {
   return (
     <nav class="top-nav">
       <div class="nav-text-large">My App</div>
       <ul class="nav-list">
         <li>
-          <a href="posts.html">Posts</a>
+          <Link to="/">Posts</Link>
         </li>
         <li>
-          <a href="users.html">Users</a>
+          <Link to="/users">Users</Link>
         </li>
         <li>
-          <a href="todos.html">Todos</a>
+          <Link to="/todos">Todos</Link>
         </li>
       </ul>
     </nav>
