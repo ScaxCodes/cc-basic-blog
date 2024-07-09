@@ -23,4 +23,6 @@ export function Posts() {
 }
 
 // 1. Map over object and render all posts, pass data as props to post comp
-// 2. Watch video and check useOutletContext if its a better fit here
+// 2. Do the same for users and todos
+// 3. Think about the structure of your code, is it good?
+// 4. Watch video and check useOutletContext if its a better fit here
