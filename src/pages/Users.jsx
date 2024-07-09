@@ -1,9 +1,6 @@
-import { Navbar } from "../Navbar";
-
 export function Users() {
   return (
     <>
-      <Navbar />
       <div className="container">
         <h1 className="page-title">Users</h1>
         <div className="card-grid">

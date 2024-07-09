@@ -1,9 +1,6 @@
-import { Navbar } from "../Navbar";
-
 export function Todos() {
   return (
     <>
-      <Navbar />
       <div className="container">
         <h1 className="page-title">Todos</h1>
         <ul>

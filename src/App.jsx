@@ -1,15 +1,7 @@
-import { useState } from "react";
-import { Navbar } from "./Navbar";
 import "./styles.css";
-import { Posts } from "./Posts";
 
 function App() {
-  return (
-    <>
-      <Navbar />
-      <Posts />
-    </>
-  );
+  return null;
 }
 
 export default App;
