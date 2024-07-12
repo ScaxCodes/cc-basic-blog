@@ -1,8 +1,8 @@
 import { Outlet, createBrowserRouter } from "react-router-dom";
-import { Home } from "./pages/Home";
 import { Users } from "./pages/Users";
 import { Todos } from "./pages/Todos";
 import { Navbar } from "./Navbar";
+import { Posts } from "./pages/Posts";
 
 export const URLS = {
   POSTS: "http://127.0.0.1:3000/posts",
@@ -14,7 +14,7 @@ export const router = createBrowserRouter([
   {
     element: <NavLayout />,
     children: [
-      { path: "/", element: <Home /> },
+      { path: "/", element: <Posts /> },
       { path: "/users", element: <Users /> },
       { path: "/todos", element: <Todos /> },
     ],

@@ -1,6 +1,6 @@
-import { Post } from "./Post";
-import { useFetch } from "./useFetch";
-import { URLS } from "./router";
+import { Post } from "../Post";
+import { useFetch } from "../useFetch";
+import { URLS } from "../router";
 
 export function Posts() {
   const { data: postsData, isLoading, isError } = useFetch(URLS.POSTS);
