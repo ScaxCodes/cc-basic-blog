@@ -1,4 +1,28 @@
+import { useFetch } from "../useFetch";
+import { Todo } from "../Todo";
+
 export function Todos() {
+  const {
+    data: todosData,
+    isLoading,
+    isError,
+  } = useFetch("http://127.0.0.1:3000/todos");
+
+  if (isLoading) return "Loading";
+  if (isError) return "Error";
+  return (
+    <>
+      <div className="container">
+        <h1 className="page-title">Users</h1>
+        <ul>
+          {todosData.map((todo) => (
+            <Todo key={todo.id} todo={todo} />
+          ))}
+        </ul>
+      </div>
+    </>
+  );
+
   return (
     <>
       <div className="container">
