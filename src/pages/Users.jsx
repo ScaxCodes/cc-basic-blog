@@ -1,12 +1,9 @@
 import { useFetch } from "../useFetch";
 import { User } from "../User";
+import { URLS } from "../router";
 
 export function Users() {
-  const {
-    data: usersData,
-    isLoading,
-    isError,
-  } = useFetch("http://127.0.0.1:3000/users");
+  const { data: usersData, isLoading, isError } = useFetch(URLS.USERS);
 
   if (isLoading) return "Loading";
   if (isError) return "Error";

@@ -1,12 +1,9 @@
 import { useFetch } from "../useFetch";
 import { Todo } from "../Todo";
+import { URLS } from "../router";
 
 export function Todos() {
-  const {
-    data: todosData,
-    isLoading,
-    isError,
-  } = useFetch("http://127.0.0.1:3000/todos");
+  const { data: todosData, isLoading, isError } = useFetch(URLS.TODOS);
 
   if (isLoading) return "Loading";
   if (isError) return "Error";

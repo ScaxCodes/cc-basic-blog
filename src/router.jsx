@@ -4,7 +4,7 @@ import { Users } from "./pages/Users";
 import { Todos } from "./pages/Todos";
 import { Navbar } from "./Navbar";
 
-const URLS = {
+export const URLS = {
   POSTS: "http://127.0.0.1:3000/posts",
   USERS: "http://127.0.0.1:3000/users",
   TODOS: "http://127.0.0.1:3000/todos",
