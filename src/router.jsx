@@ -4,6 +4,7 @@ import { Todos } from "./pages/Todos";
 import { Navbar } from "./Navbar";
 import { Posts } from "./pages/Posts";
 import { PostPages } from "./pages/PostPages";
+import { UserPages } from "./pages/UserPages";
 
 export const router = createBrowserRouter([
   {
@@ -17,7 +18,13 @@ export const router = createBrowserRouter([
           { path: ":memberId", element: <PostPages /> },
         ],
       },
-      { path: "/users", element: <Users /> },
+      {
+        path: "/users",
+        children: [
+          { index: true, element: <Users /> },
+          { path: ":userId", element: <UserPages /> },
+        ],
+      },
       { path: "/todos", element: <Todos /> },
     ],
   },
