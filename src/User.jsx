@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function User({ user }) {
   const { id, name, website, company, email } = user;
 
@@ -10,9 +12,9 @@ export function User({ user }) {
         <div>{email}</div>
       </div>
       <div className="card-footer">
-        <a className="btn" href={`user${id}.html`}>
+        <Link className="btn" to={`./${id}`}>
           View
-        </a>
+        </Link>
       </div>
     </div>
   );
