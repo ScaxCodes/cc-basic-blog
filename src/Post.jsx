@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 export function Post({ post }) {
-  const { userId, id, title, body } = post;
+  const { id, title, body } = post;
 
   return (
     <div className="card">
@@ -8,9 +10,9 @@ export function Post({ post }) {
         <div className="card-preview-text">{body}</div>
       </div>
       <div className="card-footer">
-        <a className="btn" href={`post${id}.html`}>
+        <Link className="btn" to={`./${id}`}>
           View
-        </a>
+        </Link>
       </div>
     </div>
   );
