@@ -1,6 +1,6 @@
 import { useFetch } from "../useFetch";
 import { User } from "../User";
-import { URLS } from "../router";
+import { URLS } from "../constants";
 
 export function Users() {
   const { data: usersData, isLoading, isError } = useFetch(URLS.USERS);

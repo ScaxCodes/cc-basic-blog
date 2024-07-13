@@ -1,6 +1,6 @@
 import { Post } from "../Post";
 import { useFetch } from "../useFetch";
-import { URLS } from "../router";
+import { URLS } from "../constants";
 
 export function Posts() {
   const { data: postsData, isLoading, isError } = useFetch(URLS.POSTS);
@@ -24,7 +24,11 @@ export function Posts() {
 // 2. Do the same for users and todos
 // done
 // 3. Think about the structure of your code, is it good?
-// --
-// 4. Watch video and check useOutletContext if its a better fit here
+// done, refactored Home.jsx
+// 4. useOutletContext a better fit here?
+// done, don't think so, fetching with every new routing is fine, passing data to child, not to grand child
+
 // 5. Create a Post page that renders out the post title, and body.
+// -- WE ARE HERE
+// -- How to route only between id 1-200 or even better, only within ids provided by the api?
 // 6. Create a User page that renders out the user name, company name, email, website, and address.

@@ -1,6 +1,6 @@
 import { useFetch } from "../useFetch";
 import { Todo } from "../Todo";
-import { URLS } from "../router";
+import { URLS } from "../constants";
 
 export function Todos() {
   const { data: todosData, isLoading, isError } = useFetch(URLS.TODOS);

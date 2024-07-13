@@ -4,17 +4,18 @@ import { Todos } from "./pages/Todos";
 import { Navbar } from "./Navbar";
 import { Posts } from "./pages/Posts";
 
-export const URLS = {
-  POSTS: "http://127.0.0.1:3000/posts",
-  USERS: "http://127.0.0.1:3000/users",
-  TODOS: "http://127.0.0.1:3000/todos",
-};
-
 export const router = createBrowserRouter([
   {
     element: <NavLayout />,
     children: [
-      { path: "/", element: <Posts /> },
+      // { path: "/", element: <Posts /> },
+      {
+        path: "/",
+        children: [
+          { index: true, element: <Posts /> },
+          { path: ":memberId", element: <h1>cool</h1> },
+        ],
+      },
       { path: "/users", element: <Users /> },
       { path: "/todos", element: <Todos /> },
     ],
