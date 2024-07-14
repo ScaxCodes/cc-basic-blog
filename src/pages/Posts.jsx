@@ -33,3 +33,4 @@ export function Posts() {
 // done
 
 // 7. Dynamic API requests for steps No. 5 and 6
+// skip, need to make another fetch request OR handle the isError status when request endpoint is 404

@@ -10,12 +10,11 @@ export const router = createBrowserRouter([
   {
     element: <NavLayout />,
     children: [
-      // { path: "/", element: <Posts /> },
       {
         path: "/",
         children: [
           { index: true, element: <Posts /> },
-          { path: ":memberId", element: <PostPages /> },
+          { path: "/posts/:postId", element: <PostPages /> },
         ],
       },
       {
@@ -26,6 +25,7 @@ export const router = createBrowserRouter([
         ],
       },
       { path: "/todos", element: <Todos /> },
+      { path: "/*", element: <h1>wildcard</h1> },
     ],
   },
 ]);

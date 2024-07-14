@@ -3,10 +3,11 @@ import { URLS } from "../constants";
 import { Link, useParams } from "react-router-dom";
 
 export function PostPages() {
-  const { memberId } = useParams();
+  const { postId } = useParams();
 
   // TODO: Conditional range should be fetched dynamically by API
-  if (memberId < 1 || memberId > 200) {
+  // Need to make another fetch to get /posts array length
+  if (postId < 1 || postId > 200) {
     return <h1>Error 404</h1>;
   }
 
@@ -14,7 +15,7 @@ export function PostPages() {
     data: postData,
     isLoading,
     isError,
-  } = useFetch(URLS.POSTS + "/" + memberId);
+  } = useFetch(URLS.POSTS + "/" + postId);
 
   if (isLoading) return "Loading";
   if (isError) return "Error";

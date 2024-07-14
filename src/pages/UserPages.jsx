@@ -6,6 +6,8 @@ export function UserPages() {
   const { userId } = useParams();
 
   // TODO: Conditional range should be fetch dynamically by API
+  // Need to make another fetch to get /users array length
+
   if (userId < 1 || userId > 10) {
     return <h1>Error 404</h1>;
   }
@@ -34,17 +36,5 @@ export function UserPages() {
         {userData.address.city}, {userData.address.zipcode}
       </div>
     </div>
-  );
-
-  return (
-    <>
-      <div className="container">
-        <h1 className="page-title">{userData.title}</h1>
-        <span className="page-subtitle">
-          By: <a href="user.html">UserID: {postData.userId}</a>
-        </span>
-        <div>{postData.body}</div>
-      </div>
-    </>
   );
 }

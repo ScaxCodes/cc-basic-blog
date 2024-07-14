@@ -10,7 +10,7 @@ export function Post({ post }) {
         <div className="card-preview-text">{body}</div>
       </div>
       <div className="card-footer">
-        <Link className="btn" to={`./${id}`}>
+        <Link className="btn" to={`./posts/${id}`}>
           View
         </Link>
       </div>
