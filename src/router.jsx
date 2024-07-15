@@ -1,4 +1,9 @@
-import { Navigate, Outlet, createBrowserRouter } from "react-router-dom";
+import {
+  Navigate,
+  Outlet,
+  ScrollRestoration,
+  createBrowserRouter,
+} from "react-router-dom";
 import { Users } from "./pages/Users";
 import { Todos } from "./pages/Todos";
 import { Navbar } from "./Navbar";
@@ -37,6 +42,8 @@ function NavLayout() {
     <>
       <Navbar />
       <Outlet />
+      {/* Just in case scroll bar is behaving strange */}
+      <ScrollRestoration />
     </>
   );
 }
