@@ -1,4 +1,4 @@
-import { Outlet, createBrowserRouter } from "react-router-dom";
+import { Navigate, Outlet, createBrowserRouter } from "react-router-dom";
 import { Users } from "./pages/Users";
 import { Todos } from "./pages/Todos";
 import { Navbar } from "./Navbar";
@@ -8,24 +8,26 @@ import { UserPages } from "./pages/UserPages";
 
 export const router = createBrowserRouter([
   {
+    path: "/",
     element: <NavLayout />,
     children: [
+      { index: true, element: <Navigate to="/posts" /> },
       {
-        path: "/",
+        path: "posts",
         children: [
           { index: true, element: <Posts /> },
-          { path: "/posts/:postId", element: <PostPages /> },
+          { path: ":postId", element: <PostPages /> },
         ],
       },
       {
-        path: "/users",
+        path: "users",
         children: [
           { index: true, element: <Users /> },
           { path: ":userId", element: <UserPages /> },
         ],
       },
-      { path: "/todos", element: <Todos /> },
-      { path: "/*", element: <h1>wildcard</h1> },
+      { path: "todos", element: <Todos /> },
+      { path: "*", element: <h1>wildcard</h1> },
     ],
   },
 ]);
