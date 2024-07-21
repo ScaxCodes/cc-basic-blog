@@ -6,9 +6,9 @@ export function PostPages() {
   const { postId } = useParams();
 
   // TODO: Conditional range should be fetched dynamically by API
-  // Need to make another fetch to get /posts array length
+  // Need to make another fetch to get /posts array length OR use axios
   if (postId < 1 || postId > 200) {
-    return <h1>Error 404</h1>;
+    return <h1>404 - Page Not Found</h1>;
   }
 
   const {
@@ -17,7 +17,7 @@ export function PostPages() {
     isError,
   } = useFetch(URLS.POSTS + "/" + postId);
 
-  if (isLoading) return "Loading";
+  if (isLoading) return <div className="loading-spinner"></div>;
   if (isError) return "Error";
 
   return (

@@ -6,10 +6,10 @@ export function UserPages() {
   const { userId } = useParams();
 
   // TODO: Conditional range should be fetch dynamically by API
-  // Need to make another fetch to get /users array length
+  // Need to make another fetch to get /users array length OR use axios
 
   if (userId < 1 || userId > 10) {
-    return <h1>Error 404</h1>;
+    return <h1>404 - Page Not Found</h1>;
   }
 
   const {
@@ -18,7 +18,7 @@ export function UserPages() {
     isError,
   } = useFetch(URLS.USERS + "/" + userId);
 
-  if (isLoading) return "Loading";
+  if (isLoading) return <div className="loading-spinner"></div>;
   if (isError) return "Error";
 
   return (

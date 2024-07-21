@@ -32,7 +32,7 @@ export const router = createBrowserRouter([
         ],
       },
       { path: "todos", element: <Todos /> },
-      { path: "*", element: <h1>wildcard</h1> },
+      { path: "*", element: <h1>404 - Page Not Found</h1> },
     ],
   },
 ]);

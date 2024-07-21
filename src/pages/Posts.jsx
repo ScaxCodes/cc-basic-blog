@@ -5,7 +5,7 @@ import { URLS } from "../constants";
 export function Posts() {
   const { data: postsData, isLoading, isError } = useFetch(URLS.POSTS);
 
-  if (isLoading) return "Loading";
+  if (isLoading) return <div className="loading-spinner"></div>;
   if (isError) return "Error";
   return (
     <div className="container">

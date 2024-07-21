@@ -5,7 +5,7 @@ import { URLS } from "../constants";
 export function Todos() {
   const { data: todosData, isLoading, isError } = useFetch(URLS.TODOS);
 
-  if (isLoading) return "Loading";
+  if (isLoading) return <div className="loading-spinner"></div>;
   if (isError) return "Error";
   return (
     <>
